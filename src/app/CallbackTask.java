@@ -1,6 +1,6 @@
 package app;
 
-import app.interfaces.Callback;
+import app.Interfaces.Callback;
 
 public class CallbackTask implements Runnable {
     private final Runnable task;

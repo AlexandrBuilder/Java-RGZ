@@ -1,13 +1,15 @@
-package app.tasks;
+package app.Tasks;
 
-public class TestTask implements Runnable {
+import app.Interfaces.Callback;
+
+public class TestCallbackTask implements Callback {
     @Override
-    public void run() {
+    public void runCallback() {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             System.out.println("An error occurred while waiting for the timer: " + e.getMessage());
         }
-        System.out.println("task");
+        System.out.println("callback");
     }
 }

@@ -1,6 +1,6 @@
 package app;
 
-import app.interfaces.Callback;
+import app.Interfaces.Callback;
 
 import java.util.LinkedList;
 
@@ -71,7 +71,7 @@ public class TreadPoolExecutor {
     }
 
 
-    public boolean isEmpty() {
+    public void waitWorkers() {
         while (true) {
             synchronized (queue) {
                 while (!queue.isEmpty()) {
@@ -84,7 +84,7 @@ public class TreadPoolExecutor {
             }
 
             if (!this.isWorkerWorking()) {
-                return true;
+                return;
             }
         }
     }

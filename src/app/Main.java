@@ -1,7 +1,7 @@
 package app;
 
-import app.tasks.TestCallbackTask;
-import app.tasks.TestTask;
+import app.Tasks.TestCallbackTask;
+import app.Tasks.TestTask;
 
 public class Main {
     public static void testWithPool() {
@@ -14,9 +14,8 @@ public class Main {
             treadPoolExecutor.execute(testTask, testCallbackTask);
         }
 
-        if (treadPoolExecutor.isEmpty()) {
-            treadPoolExecutor.shutdown();
-        }
+        treadPoolExecutor.waitWorkers();
+        treadPoolExecutor.shutdown();
     }
 
     public static void testWithoutPool() {
